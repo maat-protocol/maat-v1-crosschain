@@ -1,0 +1,30 @@
+{
+	"arbitrum": {
+		"admin": "0x7BF9B9166509164282188DD7d812E2b1a16b2dd9",
+		"addressProvider": "0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9",
+		"stargateAdapter": "",
+		"lzEndpoint": "0x1a44076050125825900e736c501f859c50fE728c",
+		"eId": 30110,
+
+		"tokens": [
+			"0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+			"0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+		],
+
+		"stargatePools": [
+			"0xe8CDF27AcD73a434D661C84887215F7598e7d0d3",
+			"0xcE8CcA271Ebc0533920C83d39F417ED6A0abB7D0"
+		]
+	},
+	"base": {
+		"admin": "0x7BF9B9166509164282188DD7d812E2b1a16b2dd9",
+		"addressProvider": "0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9",
+		"stargateAdapter": "",
+		"lzEndpoint": "0x1a44076050125825900e736c501f859c50fE728c",
+		"eId": 30184,
+
+		"tokens": ["0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"],
+
+		"stargatePools": ["0x27a16dc786820B16E5c9028b75B99F6f604b5d26"]
+	}
+}

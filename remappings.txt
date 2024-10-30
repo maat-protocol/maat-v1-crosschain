@@ -1,0 +1,2 @@
+forge-std=lib/forge-std/src
+@maat-v1-core=lib/maat-v1-core/

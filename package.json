@@ -1,0 +1,47 @@
+{
+	"name": "stargate-adapter",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"scripts": {
+		"prepare": "husky",
+		"postinstall": "husky install",
+		"build": "./build.sh",
+		"test": "forge test -vvv",
+		"clean": "forge clean",
+		"lint": "prettier --no-error-on-unmatched-pattern --ignore-unknown -w ./src/**/*.sol",
+		"update": "forge update && cd lib/core && git pull origin main && cd ../.."
+	},
+	"lint-staged": {
+		"**/*.sol": [
+			"prettier --ignore-unknown --write"
+		],
+		"**/*.{js,ts,tsx,json}": [
+			"pnpm prettier --write --ignore-unknown",
+			"pnpm eslint --fix"
+		]
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@layerzerolabs/create3-factory": "^2.3.36",
+		"@layerzerolabs/lz-evm-oapp-v2": "~2.3.36",
+		"@layerzerolabs/lz-evm-protocol-v2": "2.0.11",
+		"@openzeppelin/contracts": "4.9.2",
+		"@stargatefinance/stg-evm-v2": "1.0.15",
+		"prettier": "^3.3.3",
+		"prettier-plugin-solidity": "^1.4.0",
+		"solidity-bytes-utils": "^0.8.2"
+	},
+	"devDependencies": {
+		"@ensdomains/buffer": "^0.1.1",
+		"@layerzerolabs/lz-evm-messagelib-v2": "2.0.11",
+		"@layerzerolabs/lz-evm-v1-0.7": "~2.3.36",
+		"@openzeppelin/contracts": "4.8.1",
+		"@openzeppelin/contracts-upgradeable": "^4.9.6",
+		"hardhat-deploy": "^0.11.45",
+		"husky": "^9.1.4",
+		"lint-staged": "^15.2.9"
+	}
+}
