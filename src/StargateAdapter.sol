@@ -53,7 +53,8 @@ contract StargateAdapter is
         _;
     }
 
-    modifier onlyLzEndpoint(address sender) {
+    modifier onlyStargatePoolAndLzEndpoint(address from, address sender) {
+        _validateStargatePool(from);
         require(
             sender == lzEndpoint,
             "StargateAdapter: Caller is not endpoint"
@@ -178,7 +179,7 @@ contract StargateAdapter is
         bytes calldata _message,
         address _executor,
         bytes calldata _extraData
-    ) external payable onlyLzEndpoint(msg.sender) {
+    ) external payable onlyStargatePoolAndLzEndpoint(_from, msg.sender) {
         uint256 receivedAmountLD = OFTComposeMsgCodec.amountLD(_message);
         bytes memory _composeMessage = OFTComposeMsgCodec.composeMsg(_message);
         (
