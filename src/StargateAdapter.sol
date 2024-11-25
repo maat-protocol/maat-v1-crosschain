@@ -325,7 +325,7 @@ contract StargateAdapter is
             "StargateAdapter: Insufficient allowance for bridge."
         );
         srcERC20.safeTransferFrom(msg.sender, address(this), _amountLD);
-        srcERC20.approve(stargate, _amountLD);
+        srcERC20.forceApprove(stargate, _amountLD);
 
         (
             uint256 valueToSend,
@@ -403,7 +403,7 @@ contract StargateAdapter is
         bytes32 _intentionId
     ) internal {
         ERC20 token = ERC20(_vault.asset());
-        token.approve(address(_vault), _amount);
+        token.forceApprove(address(_vault), _amount);
         _vault.finishBridge(_amount, _originEid, _intentionId);
     }
 
